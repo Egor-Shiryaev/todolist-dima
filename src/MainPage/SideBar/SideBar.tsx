@@ -1,6 +1,6 @@
 import React from 'react';
 
-const ProfileHeader = () => {
+const SideBar = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const ProfileHeader = () => {
     );
 };
 
-export default ProfileHeader;
+export default SideBar;

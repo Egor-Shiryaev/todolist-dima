@@ -1,6 +1,6 @@
 import React from 'react';
 
-const PageBody = () => {
+const UpcomingEvents = () => {
     return (
         <div>
             
@@ -8,4 +8,4 @@ const PageBody = () => {
     );
 };
 
-export default PageBody;
+export default UpcomingEvents;
