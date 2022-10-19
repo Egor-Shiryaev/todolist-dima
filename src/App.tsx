@@ -3,17 +3,17 @@ import Todolist from './components/Todolist';
 
 function App() {
     let [tasks, setTasks] = useState([
-        {id: 1, title: 'JS', isDone: true},
+        {id: 1, title: 'HTML & CSS', isDone: true},
         {id: 2, title: 'JS', isDone: true},
-        {id: 3, title: 'JS', isDone: true},
+        {id: 3, title: 'ReactJS', isDone: false},
     ]);
-    let [filter, setFilter] = useState('all');
 
     function removeTask(id: number) {
         let filteredTasks = tasks.filter(t => t.id !== id)
         setTasks(filteredTasks);
     }
 
+    let [filter, setFilter] = useState('all');
     let taskForTodolist = tasks;
     if (filter === 'complited') {
         taskForTodolist = tasks.filter(t => t.isDone === true);

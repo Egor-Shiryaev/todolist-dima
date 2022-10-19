@@ -3,31 +3,35 @@ import React from 'react';
 type PropsType = {
     tasks: Array<task>
     title: string
-    removeTask: Function
-
+    removeTask: (id: number) => void
 }
 
 type task = {
-    id: number,
-    title: string,
+    id: number
+    title: string
     isDone: boolean
 }
 
 
 function Todolist(props: PropsType) {
-    return <div>
-        <h3>  {props.title} </h3>
-        {props.tasks.map((t) =>
-            <div>{t.id} {t.title}
+
+    const taskSJX = props.tasks.length
+        ? props.tasks.map((t) =>
+            <div key={t.id}>
+                <span>{t.title}</span>
                 <input type="checkbox" checked={t.isDone}/>
-                <button onClick={() => {props.removeTask(t.id)}}>x</button>
+                <button onClick={() => props.removeTask(t.id)}>x</button>
             </div>
-        )}
-    </div>
+        ) : <span>The list is empty</span>
+    // }
+
+
+    return (
+        <div>
+            <h3>  {props.title} </h3>
+            <ul>{taskSJX}</ul>
+        </div>)
 }
-
-
-
 
 
 export default Todolist;
